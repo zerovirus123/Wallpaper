@@ -6,4 +6,4 @@ When either collides with each other or the edge of the screen, bounces away.
 # Getting Started
 Install 32-bit pygame from https://www.pygame.org/download.shtml.
 
-Type `python wallpaper.py`in the directory wallpaper.py is located in.
+Type `python wallpaper.py` in the directory wallpaper.py is located in.
