@@ -3,6 +3,7 @@ import sys
 import random
 import image
 import itertools
+from pygame.locals import *
 
 surface_width = 1400
 surface_height = 720
@@ -26,6 +27,7 @@ close
 def collision(sprites):
 
     for pair in itertools.product(sprites, repeat = 2):
+    	print(type(pair[0]))
         if pair[0].rect.colliderect(pair[1].rect):
             for sprite in pair:
                 sprite.reverseDir()
@@ -35,7 +37,7 @@ collision
 #constantly changes background color after every event tick
 def backgroundColor():
 
- #   background_color[0] += random.randint(0,10)
+  # background_color[0] += random.randint(0,10)
     background_color[1] += random.randint(0,10)
     background_color[2] += random.randint(0,10)
 
@@ -85,8 +87,8 @@ def main():
     pygame.init()
     pygame.mixer.init()
     sound = pygame.mixer.Sound('rain.wav')
-    tux = image.image('Tux.png')
-    apple = image.image('apple.png')
+    tux = image.image('Tux.png', screen)
+    apple = image.image('apple.png', screen)
     sprite_list = [tux, apple]
     play(sprite_list, sound)
 main()

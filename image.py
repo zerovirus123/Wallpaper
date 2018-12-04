@@ -8,14 +8,14 @@ RIGHT = 1
 UP = 0
 DOWN = 1
 
-class image(pygame.sprite.Sprite, pygame.Rect):
+class image(pygame.sprite.Sprite):
 
     def __init__(self,filename, screen):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load(filename).convert()
         self.x_cord = [random.randint(0,surface_width), random.randint(0,2)]
         self.y_cord = [random.randint(0,surface_height), random.randint(0,2)]
-
+        self.rect = self.image.get_rect();
 
     def getImage(self):
         return self.image
@@ -63,7 +63,6 @@ class image(pygame.sprite.Sprite, pygame.Rect):
 
     def draw(self, screen):
         screen.blit(self.image, (self.x_cord[0], self.y_cord[0]))
-
 
     def reverseDir(self):
         if self.x_cord[1] is 1:
